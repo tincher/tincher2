@@ -45,13 +45,14 @@ public class RegistrationRestController {
         DataFetcher dataFetcher = new DataFetcher();
         try {
             Profile profile = dataFetcher.fetchForNewUser(registration);
-//            headUpProfileRepository.save(profile.getHeadUpProfile());
             profileRepository.save(profile);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
+
+
 
 
 

@@ -16,9 +16,9 @@ public class PlayedChamps {
 
     @OneToMany(cascade=CascadeType.ALL)
     @JoinTable(
-            name = "contact_languages",
-            joinColumns = @JoinColumn(name = "contact_id"),
-            inverseJoinColumns = @JoinColumn(name = "language")
+            name = "played_champs_championlist",
+            joinColumns = @JoinColumn(name = "played_champs"),
+            inverseJoinColumns = @JoinColumn(name = "championlist")
     )
     private List<Champion> championList;
 
