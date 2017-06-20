@@ -1,5 +1,6 @@
 package main.persistence.user.profile;
 
+import main.domain.user.profile.HeadUpProfile;
 import main.domain.user.profile.Profile;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -9,4 +10,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ProfileRepository extends CrudRepository<Profile, Integer> {
+
+    public Profile findByHeadUpProfile(HeadUpProfile headUpProfile);
+
+
 }

@@ -1,4 +1,4 @@
-package main.persistence;
+package main.persistence.user.stats;
 
 import org.springframework.stereotype.Repository;
 

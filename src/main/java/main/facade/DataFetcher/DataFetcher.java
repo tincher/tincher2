@@ -27,12 +27,13 @@ public class DataFetcher {
     public Profile fetchForNewUser(Registration registration) throws IOException {
         //Init profile
         Profile result = new Profile(registration);
-        HeadUpProfile headUpProfile = new HeadUpProfile();
 
         //JSOUP part
         Document doc = null;
         doc = Jsoup.connect(URL + registration.getUsername() + "-" + String.valueOf(registration.getBnt())).timeout(20 * 1000).get();
         Element champstats = doc.getElementById("competitive");
+
+        result.getHeadUpProfile().setProfileImgUrl(doc.getElementsByClass("player-portrait").get(0).attr("src"));
 
         if (champstats != null && champstats.getElementsByClass("career-stats-section") != null) {
 

@@ -9,4 +9,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface HeadUpProfileRepository extends CrudRepository<HeadUpProfile, Integer> {
+
+    public HeadUpProfile findByBntAndUsername(int bnt, String username);
+
+
 }

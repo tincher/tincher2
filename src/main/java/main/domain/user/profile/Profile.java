@@ -29,6 +29,9 @@ public class Profile {
     @OneToOne(cascade=CascadeType.ALL)
     private HeadUpProfile headUpProfile;
 
+    public Profile() {
+    }
+
     public Profile(Registration registration) {
         this.headUpProfile = new HeadUpProfile().setBnt(registration.getBnt()).setUsername(registration.getUsername());
         this.smurf = false;
