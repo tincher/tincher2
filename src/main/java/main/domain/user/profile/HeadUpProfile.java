@@ -25,6 +25,8 @@ public class HeadUpProfile {
     @OneToOne(cascade=CascadeType.ALL)
     private PlayedChamps playedChamps;
 
+    private String profileImgUrl;
+
 
     public HeadUpProfile() {
         this.setUsername("").setBnt(0000).setContact(new Contact()).setPlayedChamps(new PlayedChamps());
@@ -64,5 +66,13 @@ public class HeadUpProfile {
     public HeadUpProfile setPlayedChamps(PlayedChamps playedChamps) {
         this.playedChamps = playedChamps;
         return this;
+    }
+
+    public String getProfileImgUrl() {
+        return profileImgUrl;
+    }
+
+    public void setProfileImgUrl(String profileImgUrl) {
+        this.profileImgUrl = profileImgUrl;
     }
 }
