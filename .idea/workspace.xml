@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5552152-2da5-4d32-8cc1-8554cd840ce8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/domain/user/profile/Profile.class" afterPath="$PROJECT_DIR$/target/classes/main/domain/user/profile/Profile.class" />
+    <list default="true" id="c5552152-2da5-4d32-8cc1-8554cd840ce8" name="Default" comment="update">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/main/domain/registration/Registration.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/facade/DataFetcher/DataFetcher.class" afterPath="$PROJECT_DIR$/target/classes/main/facade/DataFetcher/DataFetcher.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/facade/DataFetcher/DataFetcher.java" afterPath="$PROJECT_DIR$/src/main/java/main/facade/DataFetcher/DataFetcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/domain/registration/Registration.java" afterPath="$PROJECT_DIR$/src/main/java/main/domain/registration/Registration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/facade/RESTController/ProfileRestController.java" afterPath="$PROJECT_DIR$/src/main/java/main/facade/RESTController/ProfileRestController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/facade/RESTController/RegistrationRestController.java" afterPath="$PROJECT_DIR$/src/main/java/main/facade/RESTController/RegistrationRestController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,12 +38,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProfileRestController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RegistrationRestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main/facade/RESTController/RegistrationRestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="42" column="88" lean-forward="false" selection-start-line="42" selection-start-column="88" selection-end-line="42" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfileRestController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/main/facade/RESTController/ProfileRestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="47" column="93" lean-forward="false" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
+            <state relative-caret-position="352">
+              <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Registration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main/domain/registration/Registration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="e#526#527#0" expanded="true" />
+                <element signature="e#567#568#0" expanded="true" />
+                <element signature="e#606#607#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataFetcher.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataFetcher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/main/facade/DataFetcher/DataFetcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
+            <state relative-caret-position="896">
               <caret line="99" column="10" lean-forward="false" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
               <folding />
             </state>
@@ -188,10 +214,8 @@
         <option value="$PROJECT_DIR$/src/main/java/main/persistence/user/stats/PlayedChamps.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/configuration/EmbeddedServletContainerFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/main/domain/registration/Registration.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/configuration/Configuration.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/main/facade/RESTController/RegistrationRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/domain/user/stats/PlayedChamps.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/domain/user/profile/HeadUpProfile.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/persistence/user/stats/StatBlockRepository.java" />
@@ -201,6 +225,8 @@
         <option value="$PROJECT_DIR$/src/main/java/main/facade/Services/ProfileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/domain/user/profile/Profile.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/facade/DataFetcher/DataFetcher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/facade/RESTController/RegistrationRestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/domain/registration/Registration.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/facade/RESTController/ProfileRestController.java" />
       </list>
     </option>
@@ -1109,7 +1135,7 @@
       <workItem from="1497437583112" duration="19667000" />
       <workItem from="1497524968898" duration="3185000" />
       <workItem from="1497698242395" duration="747000" />
-      <workItem from="1497994572561" duration="4316000" />
+      <workItem from="1497994572561" duration="4731000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1497525131579</created>
@@ -1139,7 +1165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1497998747208</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update profile img">
+      <created>1497999418293</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1497999418293</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1172,7 +1205,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48504000" />
+    <option name="totallyTimeSpent" value="48919000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1198,7 +1231,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.65964174" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1928" y="30" width="944" height="1042" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4373024" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1928" y="30" width="944" height="1042" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1230,7 +1263,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="profileimg" />
     <MESSAGE value="get Profile Object" />
-    <option name="LAST_COMMIT_MESSAGE" value="get Profile Object" />
+    <MESSAGE value="update profile img" />
+    <option name="LAST_COMMIT_MESSAGE" value="update profile img" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1242,7 +1276,7 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="88" />
+      <option name="time" value="92" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1507,13 +1541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/domain/registration/Registration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/main/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -1598,14 +1625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/facade/RESTController/RegistrationRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/main/persistence/user/stats/StatBlockRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -1662,10 +1681,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/facade/RESTController/ProfileRestController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/facade/DataFetcher/DataFetcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="47" column="93" lean-forward="false" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
+        <state relative-caret-position="896">
+          <caret line="99" column="10" lean-forward="false" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1680,10 +1699,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/facade/DataFetcher/DataFetcher.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/facade/RESTController/RegistrationRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="99" column="10" lean-forward="false" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+        <state relative-caret-position="432">
+          <caret line="42" column="88" lean-forward="false" selection-start-line="42" selection-start-column="88" selection-end-line="42" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/domain/registration/Registration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/facade/RESTController/ProfileRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
           <folding />
         </state>
       </provider>

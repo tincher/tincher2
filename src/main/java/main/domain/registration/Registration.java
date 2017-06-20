@@ -21,14 +21,18 @@ public class Registration {
     private int bnt;
 
 
+    public Registration() {
+        this.registrationDate = new Date();
+    }
+
     public Date getRegistrationDate() {
         return registrationDate;
     }
 
-    public Registration setRegistrationDate(Date registrationDate) {
-        this.registrationDate = registrationDate;
-        return this;
-    }
+//    public Registration setRegistrationDate(Date registrationDate) {
+//        this.registrationDate = registrationDate;
+//        return this;
+//    }
 
     public String getUsername() {
         return username;

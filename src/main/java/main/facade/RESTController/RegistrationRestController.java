@@ -40,7 +40,7 @@ public class RegistrationRestController {
 
     @RequestMapping(value = "/register/{bnt}/{username}")
     public void register(@PathVariable("bnt") int bnt, @PathVariable("username") String username) {
-        Registration registration = new Registration().setBnt(bnt).setUsername(username).setRegistrationDate(new Date());
+        Registration registration = new Registration().setBnt(bnt).setUsername(username);
         registrationRepository.save(registration);
         DataFetcher dataFetcher = new DataFetcher();
         try {

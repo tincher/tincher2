@@ -1,5 +1,6 @@
 package main.facade.RESTController;
 
+import main.domain.registration.Registration;
 import main.domain.user.profile.Profile;
 import main.facade.DataFetcher.DataFetcher;
 import main.facade.Services.ProfileService;
@@ -42,11 +43,27 @@ public class ProfileRestController {
     }
 
 
+
+    @RequestMapping(value = "/refreshProfile/{bnt}/{username}")
+    public void refreshProfile(@PathVariable("bnt") int bnt, @PathVariable("username") String username) throws IOException {
+        Profile profile = getProfile(bnt, username);
+        profileRepository.delete(profile);
+        profile = dataFetcher.fetchForNewUser(new Registration().setBnt(bnt).setUsername(username));
+        profileRepository.save(profile);
+    }
+
+
+
+
     @RequestMapping(value = "/refreshProfileImage/{bnt}/{username}")
     public void refreshProfileImage(@PathVariable("bnt") int bnt, @PathVariable("username") String username) throws IOException {
         Profile profile = getProfile(bnt, username);
         profile.getHeadUpProfile().setProfileImgUrl(dataFetcher.getProfileImage(bnt, username));
+        profileRepository.save(profile);
     }
+
+
+
 
 
 }
