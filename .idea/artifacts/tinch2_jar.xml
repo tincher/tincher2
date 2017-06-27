@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="tinch2:jar">
+  <artifact type="jar" build-on-make="true" name="tinch2:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/tinch2_jar</output-path>
     <root id="archive" name="tinch2.jar">
       <element id="module-output" name="tinch2" />
@@ -58,6 +58,7 @@
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.8.RELEASE/spring-core-4.3.8.RELEASE.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-juli/8.5.14/tomcat-juli-8.5.14.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/keystore.p12" />
     </root>
   </artifact>
 </component>
