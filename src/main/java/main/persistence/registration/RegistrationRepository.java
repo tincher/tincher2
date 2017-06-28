@@ -1,4 +1,4 @@
-package main.persistence.user;
+package main.persistence.registration;
 
 import main.domain.registration.Registration;
 import org.springframework.data.repository.CrudRepository;

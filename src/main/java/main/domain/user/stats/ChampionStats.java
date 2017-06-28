@@ -1,11 +1,8 @@
 package main.domain.user.stats;
 
-import main.domain.stat_block.StatBlock;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Joel on 11.06.2017.

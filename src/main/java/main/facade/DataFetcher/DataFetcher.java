@@ -1,7 +1,6 @@
 package main.facade.DataFetcher;
 
-import main.domain.stat_block.StatBlock;
-import main.domain.user.profile.HeadUpProfile;
+import main.domain.user.stats.StatBlock;
 import main.domain.user.profile.Profile;
 import main.domain.registration.Registration;
 import main.domain.user.stats.Champion;

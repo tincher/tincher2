@@ -19,10 +19,24 @@ public class Registration {
     private Date registrationDate;
     private String username;
     private int bnt;
+    private String password;
 
 
     public Registration() {
         this.registrationDate = new Date();
+    }
+
+
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Date getRegistrationDate() {

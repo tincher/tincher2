@@ -1,4 +1,4 @@
-package main.domain.stat_block;
+package main.domain.user.stats;
 
 import javax.persistence.*;
 import java.util.HashMap;
