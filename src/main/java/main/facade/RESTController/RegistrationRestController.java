@@ -39,15 +39,17 @@ public class RegistrationRestController {
     }
 
     @RequestMapping(value = "/register/{bnt}/{username}")
-    public void register(@PathVariable("bnt") int bnt, @PathVariable("username") String username) {
+    public Profile register(@PathVariable("bnt") int bnt, @PathVariable("username") String username) {
         Registration registration = new Registration().setBnt(bnt).setUsername(username);
         registrationRepository.save(registration);
         DataFetcher dataFetcher = new DataFetcher();
         try {
             Profile profile = dataFetcher.fetchForNewUser(registration);
             profileRepository.save(profile);
+            return profile;
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
 
     }

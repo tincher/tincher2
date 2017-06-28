@@ -1,0 +1,12 @@
+server:
+  port: 443
+  ssl:
+    key-store: /home/pi/keystore/keystore.p12
+
+---
+spring:
+  profiles: dev
+server:
+  port: 8443
+  ssl:
+    key-store: src/main/resources/keystore.p12
