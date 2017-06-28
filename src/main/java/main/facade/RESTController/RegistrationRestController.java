@@ -26,9 +26,6 @@ public class RegistrationRestController {
     private ProfileRepository profileRepository;
 
     @Autowired
-    private HeadUpProfileRepository headUpProfileRepository;
-
-    @Autowired
     private RegistrationRepository registrationRepository;
 
     @Autowired
@@ -38,22 +35,23 @@ public class RegistrationRestController {
 
     private DataFetcher dataFetcher = new DataFetcher();
 
-//    @RequestMapping(value = "/test", method = RequestMethod.GET)
-//    public String test() {
-//        return "Success";
-//    }
 
     @RequestMapping(method = RequestMethod.POST)
-    public User register(@RequestBody Registration reg) throws NoSuchAlgorithmException {
+    public User register(@RequestBody Registration reg) {
         Registration registration = new Registration().setBnt(reg.getBnt()).setUsername(reg.getUsername());
         registrationRepository.save(registration);
         try {
             Profile profile = dataFetcher.fetchForNewUser(registration);
             profileRepository.save(profile);
+            User dbUser = userRepository.findByUsername(reg.getUsername() + "#" + reg.getBnt());
+            if (dbUser == null) {
             User user = new User().setUsername(reg.getUsername() + "#" + reg.getBnt()).setPassword(shaService.getEncrypted(reg.getPassword()));
-            userRepository.save(user);
-            return user;
-        } catch (IOException e) {
+                userRepository.save(user);
+                return user;
+            } else {
+                return dbUser;
+            }
+        } catch (IOException | NoSuchAlgorithmException e) {
             e.printStackTrace();
             return null;
         }
