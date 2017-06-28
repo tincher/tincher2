@@ -8,6 +8,8 @@ import main.domain.user.contact.Contact;
 import main.domain.user.stats.PlayedChamps;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class HeadUpProfile {
@@ -19,17 +21,25 @@ public class HeadUpProfile {
     private int bnt;
     private String username;
 
-    @OneToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private Contact contact;
 
-    @OneToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private PlayedChamps playedChamps;
 
     private String profileImgUrl;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "hup_playTime",
+            joinColumns = @JoinColumn(name = "hup_id"),
+            inverseJoinColumns = @JoinColumn(name = "playTime_id")
+    )
+    private List<TimeSpan> usualPlayTime;
+
 
     public HeadUpProfile() {
-        this.setUsername("").setBnt(0000).setContact(new Contact()).setPlayedChamps(new PlayedChamps());
+        this.setUsername("").setBnt(0).setContact(new Contact()).setPlayedChamps(new PlayedChamps()).setUsualPlayTime(new ArrayList<>());
     }
 
     public int getBnt() {
@@ -38,6 +48,23 @@ public class HeadUpProfile {
 
     public HeadUpProfile setBnt(int bnt) {
         this.bnt = bnt;
+        return this;
+    }
+
+    public List<TimeSpan> getUsualPlayTime() {
+        return usualPlayTime;
+    }
+
+    public HeadUpProfile addUsualPlayTime(TimeSpan timeSpan) {
+        if (this.usualPlayTime == null) {
+            this.usualPlayTime = new ArrayList<>();
+        }
+        this.usualPlayTime.add(timeSpan);
+        return this;
+    }
+
+    public HeadUpProfile setUsualPlayTime(List<TimeSpan> usualPlayTime) {
+        this.usualPlayTime = usualPlayTime;
         return this;
     }
 

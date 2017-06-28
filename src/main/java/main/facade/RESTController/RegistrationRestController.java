@@ -42,9 +42,9 @@ public class RegistrationRestController {
         registrationRepository.save(registration);
         try {
             Profile profile = dataFetcher.fetchForNewUser(registration);
-            profileRepository.save(profile);
             User dbUser = userRepository.findByUsername(reg.getUsername() + "#" + reg.getBnt());
             if (dbUser == null) {
+                profileRepository.save(profile);
                 User user = new User().setUsername(reg.getUsername() + "#" + reg.getBnt()).setPassword(shaService.getEncrypted(reg.getPassword()));
                 userRepository.save(user);
                 return user;
