@@ -2,6 +2,8 @@ server:
   port: 443
   ssl:
     key-store: /home/pi/keystore/keystore.p12
+logging:
+  file: /home/pi/log_files/log.txt
 
 ---
 spring:
@@ -10,3 +12,5 @@ server:
   port: 8443
   ssl:
     key-store: src/main/resources/keystore.p12
+logging:
+  file: C:/Users/Joel/Desktop/log.txt
