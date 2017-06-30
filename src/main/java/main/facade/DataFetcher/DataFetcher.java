@@ -1,11 +1,11 @@
 package main.facade.DataFetcher;
 
-import main.domain.user.stats.StatBlock;
-import main.domain.user.profile.Profile;
 import main.domain.registration.Registration;
+import main.domain.user.profile.Profile;
 import main.domain.user.stats.Champion;
 import main.domain.user.stats.ChampionStats;
 import main.domain.user.stats.PlayedChamps;
+import main.domain.user.stats.StatBlock;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -24,15 +24,21 @@ public class DataFetcher {
     private final String URL_SEARCH = "https://playoverwatch.com/de-de/search?q=";
 
 
-    public Profile fetchForNewUser(Registration registration) throws IOException {
-        //Init profile
-        Profile result = new Profile(registration);
+    public Profile fetchForExistingUser(Profile profile) throws IOException {
+        return fetchForProfile(profile);
+    }
 
+    public Profile fetchForNewUser(Registration registration) throws IOException {
+        Profile result = new Profile(registration);
+        return fetchForProfile(result);
+    }
+
+    private Profile fetchForProfile(Profile profile) throws IOException {
         //JSOUP part
-        Document doc = getDocument(registration.getBnt(), registration.getUsername());
+        Document doc = getDocument(profile.getHeadUpProfile().getBnt(), profile.getHeadUpProfile().getUsername());
         Element champstats = doc.getElementById("competitive");
 
-        result.getHeadUpProfile().setProfileImgUrl(getProfileImage(registration.getBnt(), registration.getUsername()));
+        profile.getHeadUpProfile().setProfileImgUrl(getProfileImage(profile.getHeadUpProfile().getBnt(), profile.getHeadUpProfile().getUsername()));
 
         if (champstats != null && champstats.getElementsByClass("career-stats-section") != null) {
 
@@ -84,10 +90,10 @@ public class DataFetcher {
                         }
                     }
                 }
-                result.getHeadUpProfile().setPlayedChamps(playedChamps);
+                profile.getHeadUpProfile().setPlayedChamps(playedChamps);
             }
         }
-        return result;
+        return profile;
     }
 
     private Document getDocument(int bnt, String username) throws IOException {
