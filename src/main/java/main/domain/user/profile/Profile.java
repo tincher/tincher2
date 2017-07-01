@@ -23,10 +23,10 @@ public class Profile {
     private boolean premium;
 
     private String biography;
-    @OneToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private UserScore userScore;
 
-    @OneToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private HeadUpProfile headUpProfile;
 
     public Profile() {
@@ -41,22 +41,30 @@ public class Profile {
         this.chatIds = new ArrayList<>();
     }
 
-    public void setChatIds(List<Integer> chatIds) {
-        this.chatIds = chatIds;
+    public int getId() {
+        return id;
     }
 
-//    public void addChatId
-
-    public void setBiography(String biography) {
-        this.biography = biography;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public List<Integer> getChatIds() {
         return chatIds;
     }
 
+//    public void addChatId
+
+    public void setChatIds(List<Integer> chatIds) {
+        this.chatIds = chatIds;
+    }
+
     public String getBiography() {
         return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
     }
 
     public boolean isSmurf() {

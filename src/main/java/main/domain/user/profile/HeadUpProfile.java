@@ -5,6 +5,7 @@ package main.domain.user.profile;
  */
 
 import main.domain.user.contact.Contact;
+import main.domain.user.stats.ChampionName;
 import main.domain.user.stats.PlayedChamps;
 
 import javax.persistence.*;
@@ -29,6 +30,14 @@ public class HeadUpProfile {
 
     private String profileImgUrl;
 
+    @OneToMany
+    @JoinTable(
+            name = "hup_favChamps",
+            joinColumns = @JoinColumn(name = "hup_id"),
+            inverseJoinColumns = @JoinColumn(name = "favChamps_id")
+    )
+    private List<ChampionName> favoriteChamps;
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "hup_playTime",
@@ -40,6 +49,24 @@ public class HeadUpProfile {
 
     public HeadUpProfile() {
         this.setUsername("").setBnt(0).setContact(new Contact()).setPlayedChamps(new PlayedChamps()).setUsualPlayTime(new ArrayList<>());
+    }
+
+
+    public List<ChampionName> getFavoriteChamps() {
+        return favoriteChamps;
+    }
+
+    public HeadUpProfile setFavoriteChamps(List<ChampionName> favoriteChamps) {
+        this.favoriteChamps = favoriteChamps;
+        return this;
+    }
+
+    public HeadUpProfile addFavoriteChamp(ChampionName championName) {
+        if (this.favoriteChamps == null) {
+            this.favoriteChamps = new ArrayList<>();
+        }
+        this.favoriteChamps.add(championName);
+        return this;
     }
 
     public int getBnt() {
@@ -55,16 +82,16 @@ public class HeadUpProfile {
         return usualPlayTime;
     }
 
+    public HeadUpProfile setUsualPlayTime(List<TimeSpan> usualPlayTime) {
+        this.usualPlayTime = usualPlayTime;
+        return this;
+    }
+
     public HeadUpProfile addUsualPlayTime(TimeSpan timeSpan) {
         if (this.usualPlayTime == null) {
             this.usualPlayTime = new ArrayList<>();
         }
         this.usualPlayTime.add(timeSpan);
-        return this;
-    }
-
-    public HeadUpProfile setUsualPlayTime(List<TimeSpan> usualPlayTime) {
-        this.usualPlayTime = usualPlayTime;
         return this;
     }
 
