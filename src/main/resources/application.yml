@@ -3,7 +3,7 @@ server:
   ssl:
     key-store: /home/pi/keystore/keystore.p12
 logging:
-  file: /home/pi/log_files/log.txt
+  file: /home/pi/log/log.txt
 
 ---
 spring:
