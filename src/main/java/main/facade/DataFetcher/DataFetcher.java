@@ -5,7 +5,7 @@ import main.domain.user.profile.Profile;
 import main.domain.user.stats.Champion;
 import main.domain.user.stats.PlayedChamps;
 import main.domain.user.stats.StatBlock;
-import main.facade.Services.ChampionNameService;
+import main.facade.Services.ChampionService;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -25,7 +25,7 @@ public class DataFetcher {
     private final String URL = "https://playoverwatch.com/de-de/career/pc/eu/";
     private final String URL_SEARCH = "https://playoverwatch.com/de-de/search?q=";
 
-    private ChampionNameService championNameService = new ChampionNameService();
+    private ChampionService championService = new ChampionService();
 
 
     public Profile fetchForExistingUser(Profile profile) throws IOException {
@@ -43,6 +43,7 @@ public class DataFetcher {
         Element champstats = doc.getElementById("competitive");
 
         profile.getHeadUpProfile().setProfileImgUrl(getProfileImage(profile.getHeadUpProfile().getBnt(), profile.getHeadUpProfile().getUsername()));
+        profile.getHeadUpProfile().setCompRank(getCompRank(doc));
 
         if (champstats != null && champstats.getElementsByClass("career-stats-section") != null) {
 
@@ -55,7 +56,7 @@ public class DataFetcher {
 
                 for (int i = 1; i < dataTableElems.get(0).getElementsByTag("option").size(); i++) {
                     Champion champion = new Champion();
-                    champion.setName(championNameService.getChampionName(dataTableElems.get(0).getElementsByTag("option").get(i).text()));
+                    champion.setName(championService.getChampionName(dataTableElems.get(0).getElementsByTag("option").get(i).text()));
                     playedChamps.addToChampList(champion);
                 }
 
@@ -104,6 +105,19 @@ public class DataFetcher {
         Document doc = null;
         doc = Jsoup.connect(URL + username + "-" + String.valueOf(bnt)).timeout(20 * 1000).get();
         return doc;
+    }
+
+    public int getCompRank(int bnt, String username) throws IOException {
+        return getCompRank(getDocument(bnt, username));
+    }
+
+    private int getCompRank(Document doc) {
+        try {
+
+            return Integer.parseInt(doc.getElementsByClass("u-align-center").get(0).text());
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 
     public String getProfileImage(int bnt, String username) throws IOException {

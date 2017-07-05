@@ -5,7 +5,6 @@ package main.domain.user.profile;
  */
 
 import main.domain.user.contact.Contact;
-import main.domain.user.stats.ChampionName;
 import main.domain.user.stats.PlayedChamps;
 
 import javax.persistence.*;
@@ -22,6 +21,8 @@ public class HeadUpProfile {
     private int bnt;
     private String username;
 
+    private int compRank;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Contact contact;
 
@@ -30,13 +31,6 @@ public class HeadUpProfile {
 
     private String profileImgUrl;
 
-    @OneToMany
-    @JoinTable(
-            name = "hup_favChamps",
-            joinColumns = @JoinColumn(name = "hup_id"),
-            inverseJoinColumns = @JoinColumn(name = "favChamps_id")
-    )
-    private List<ChampionName> favoriteChamps;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -52,22 +46,15 @@ public class HeadUpProfile {
     }
 
 
-    public List<ChampionName> getFavoriteChamps() {
-        return favoriteChamps;
+    public int getCompRank() {
+        return compRank;
     }
 
-    public HeadUpProfile setFavoriteChamps(List<ChampionName> favoriteChamps) {
-        this.favoriteChamps = favoriteChamps;
+    public HeadUpProfile setCompRank(int compRank) {
+        this.compRank = compRank;
         return this;
     }
 
-    public HeadUpProfile addFavoriteChamp(ChampionName championName) {
-        if (this.favoriteChamps == null) {
-            this.favoriteChamps = new ArrayList<>();
-        }
-        this.favoriteChamps.add(championName);
-        return this;
-    }
 
     public int getBnt() {
         return bnt;
@@ -126,7 +113,9 @@ public class HeadUpProfile {
         return profileImgUrl;
     }
 
-    public void setProfileImgUrl(String profileImgUrl) {
+    public HeadUpProfile setProfileImgUrl(String profileImgUrl) {
         this.profileImgUrl = profileImgUrl;
+        return this;
     }
+
 }
