@@ -14,7 +14,7 @@ public class PlayedChamps {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "played_champs_championlist",
             joinColumns = @JoinColumn(name = "played_champs"),
@@ -35,11 +35,15 @@ public class PlayedChamps {
         return this;
     }
 
-    public PlayedChamps addToChampList(Champion champion){
-        if(this.championList == null){
+    public PlayedChamps addToChampList(Champion champion) {
+        if (this.championList == null) {
             this.championList = new ArrayList<>();
         }
         this.championList.add(champion);
         return this;
+    }
+
+    public List<Champion> getFavoriteChampionsList() {
+        return championList.subList(0, 2);
     }
 }

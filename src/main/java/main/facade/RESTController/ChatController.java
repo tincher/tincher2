@@ -44,5 +44,11 @@ public class ChatController {
         return chatMessage;
     }
 
+    @MessageMapping("/sendGameRequest/{bnt}/{username}")
+    @SendTo("/gamerequests/user/{bnt}/{username}")
+    public ChatMessage sendGameRequest(ChatMessage chatMessage) {
+        return chatMessage;
+    }
+
 
 }

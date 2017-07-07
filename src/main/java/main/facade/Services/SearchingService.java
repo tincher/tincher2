@@ -39,7 +39,7 @@ public class SearchingService {
         List<Profile> result = new ArrayList<>();
         List<HeadUpProfile> compRankMatches = getCompRankMatches(profile);
         for (HeadUpProfile headUpProfile : compRankMatches) {
-            for (Champion champion : headUpProfile.getPlayedChamps().getChampionList().subList(0, 2)) {
+            for (Champion champion : headUpProfile.getPlayedChamps().getFavoriteChampionsList()) {
                 if (championService.getChampionRole(champion.getName()) == role) {
                     result.add(profileRepository.findByHeadUpProfile(headUpProfile));
                     break;
@@ -72,8 +72,6 @@ public class SearchingService {
         }
         return compRankMatches;
     }
-
-
 
 
 }

@@ -1,4 +1,4 @@
-package main.facade.config;
+package main.config;
 
 import main.domain.user.User;
 import main.facade.Services.SHAService;
