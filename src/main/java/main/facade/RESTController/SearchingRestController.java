@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,10 +24,12 @@ public class SearchingRestController {
 
     @RequestMapping(value = "/idealMatch", method = RequestMethod.POST)
     public List<Profile> getIdealMatch(@RequestBody Profile profile) {
-        List<Profile> result = new ArrayList<>();
-        result = searchingService.findIdealProfile(profile, Roles.DPS);
+        return searchingService.findIdealProfile(profile, Roles.DPS);
+    }
 
-        return result;
+    @RequestMapping(value = "/fastMatch", method = RequestMethod.POST)
+    public List<Profile> getFastMatch(@RequestBody Profile profile) {
+        return searchingService.findFastProfile(profile);
     }
 
 

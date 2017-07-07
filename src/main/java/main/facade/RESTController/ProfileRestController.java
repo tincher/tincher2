@@ -2,6 +2,7 @@ package main.facade.RESTController;
 
 import main.domain.registration.Registration;
 import main.domain.user.profile.Profile;
+import main.domain.user.profile.TimeSpan;
 import main.facade.DataFetcher.DataFetcher;
 import main.facade.Services.ProfileService;
 import main.persistence.user.profile.ProfileRepository;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.NonUniqueResultException;
 import java.io.IOException;
+import java.time.LocalTime;
+import java.util.LinkedHashMap;
 
 /**
  * Created by Joel on 15.06.2017.
@@ -55,6 +58,20 @@ public class ProfileRestController {
         profileRepository.save(profile);
     }
 
+    @RequestMapping(value = "/addUsualPlayTime/{bnt}/{username}", method = RequestMethod.POST)
+    public void addUsualPlayTime(@PathVariable("bnt") int bnt, @PathVariable("username") String username, @RequestBody Object[] timeSpan) {
+        Profile profile = getProfile(bnt, username);
+        profile.getHeadUpProfile().addUsualPlayTime(new TimeSpan().setStartTime((LinkedHashMap) timeSpan[0]).setEndTime((LinkedHashMap) timeSpan[1]));
+        profileRepository.save(profile);
+    }
+
+    @RequestMapping(value = "/emptyInterval")
+    public LocalTime[] getInterval() {
+        LocalTime[] array = new LocalTime[2];
+        array[0] = LocalTime.now();
+        array[1] = LocalTime.now();
+        return array;
+    }
 
 //    @RequestMapping(value = "/setFavourite Champs/{bnt}/{username}", method = RequestMethod.POST)
 //    public void setFavoriteChamps(@RequestBody List<ChampionName> favouriteChamps, @PathVariable("bnt") int bnt, @PathVariable("username") String username) {

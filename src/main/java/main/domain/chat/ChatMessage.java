@@ -1,10 +1,11 @@
 package main.domain.chat;
 
+import org.joda.time.DateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
 
 /**
  * Created by Joel on 04.07.2017.
@@ -16,7 +17,7 @@ public class ChatMessage {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private Date time;
+    private DateTime time;
 
     private String content;
 
@@ -24,11 +25,11 @@ public class ChatMessage {
     public ChatMessage() {
     }
 
-    public Date getTime() {
+    public DateTime getTime() {
         return time;
     }
 
-    public ChatMessage setTime(Date time) {
+    public ChatMessage setTime(DateTime time) {
         this.time = time;
         return this;
     }

@@ -31,7 +31,6 @@ public class HeadUpProfile {
 
     private String profileImgUrl;
 
-
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "hup_playTime",

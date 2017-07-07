@@ -15,6 +15,7 @@ public class GameRequest extends ChatMessage {
     @OneToOne
     private TimeSpan timeSpan;
 
+
     public GameRequest() {
         super();
     }
