@@ -4,10 +4,17 @@ server:
     key-store: /home/tincher/keystore/tincher_de.p7s
 logging:
   file: /home/tincher/log/log.txt
+spring:
+  datasource: 
+    username: root
+    password: qazesd
 
 ---
 spring:
   profiles: dev
+  datasource:
+    username: tinch
+    password: tinch
 server:
   port: 8443
   ssl:
