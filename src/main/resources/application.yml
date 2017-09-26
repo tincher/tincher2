@@ -1,7 +1,7 @@
 server:
   port: 443
   ssl:
-    key-store: /home/tincher/keystore/tincher_de.p7s
+    key-store: /home/tincher/keystore/tincher_de.p12
 logging:
   file: /home/tincher/log/log.txt
 spring:
