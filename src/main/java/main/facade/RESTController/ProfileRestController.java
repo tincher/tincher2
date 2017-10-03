@@ -19,6 +19,7 @@ import java.util.LinkedHashMap;
  */
 @RestController
 @RequestMapping("profile")
+@CrossOrigin
 public class ProfileRestController {
 
     @Autowired
