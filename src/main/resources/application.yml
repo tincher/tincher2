@@ -2,6 +2,7 @@ server:
   port: 443
   ssl:
     key-store: /home/tincher/keystore/tincher_de.p12
+  connection-timeout: 1000
 logging:
   file: /home/tincher/log/log.txt
 spring:
